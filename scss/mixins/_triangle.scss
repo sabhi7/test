@@ -1,0 +1,49 @@
+@mixin set-border($side,$width,$color){
+	border-#{$side}:$width solid $color;
+}
+
+@function oposite-side($side){
+	@if $side==top{
+		@return (bottom); 
+	}@else if $side == bottom{
+		@return (top);
+	} @else if $side == left {
+		@return (right);
+	} @else {
+		@return (left);
+	}
+
+}
+
+@mixin triangle($width,$direction,$color){
+	@include size(0px);
+	$opposite:oposite-side($direction);
+	$sides:(top,bottom,left,right);
+	@each $s in $sides{
+		@if ($s != $direction and $s != $opposite) {
+			@include set-border($s,$width,transparent);
+		}
+	}
+	@include set-border($opposite,$width,$color);
+}
+
+// @mixin triangle($width,$direction,$color){
+// 	@include size(0px);
+// 	@if $direction == up {
+// 		border-left:$width solid transparent;
+// 		border-right:$width solid transparent;
+// 		border-bottom:$width solid $color;
+// 	} @else if $direction == down {
+// 		border-left:$width solid transparent;
+// 		border-right:$width solid transparent;
+// 		border-top:$width solid $color;
+// 	} @else if $direction == left {
+// 		border-top:$width solid transparent;
+// 		border-bottom:$width solid transparent;
+// 		border-right:$width solid $color;
+// 	} @else {
+// 		border-top:$width solid transparent;
+// 		border-bottom:$width solid transparent;
+// 		border-left:$width solid $color;
+// 	} 
+// }	

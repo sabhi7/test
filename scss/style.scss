@@ -1,0 +1,15 @@
+@import "mixins";
+@import "utilities";
+
+.circle{
+	@include circle(50px,red);
+}
+.triangle{
+	@include triangle(50px,bottom,yellow);
+}
+$icons:(twitter,linkedin);
+@each $social in $icons {
+	.#{$social}{
+		background:url('../#{$social}.png') no-repeat;
+	}
+}

@@ -1,0 +1,12 @@
+.clearfix {
+	@include clearfix();
+}
+.hide {
+	display:none;
+}
+.show {
+	display:block;
+}
+.invisible {
+	visibility:hidden;
+}
