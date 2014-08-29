@@ -1,0 +1,14 @@
+
+@include colums(xs);
+
+@media screen and (min-width:768px){
+	@include colums(sm);
+}
+@media screen and (min-width:992px){
+	@include colums(md);
+}
+@media screen and (min-width:1200px){
+	@include colums(lg);
+}
+
+	

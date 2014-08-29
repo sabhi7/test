@@ -12,7 +12,6 @@
 	} @else {
 		@return (left);
 	}
-
 }
 
 @mixin triangle($width,$direction,$color){
@@ -27,23 +26,3 @@
 	@include set-border($opposite,$width,$color);
 }
 
-// @mixin triangle($width,$direction,$color){
-// 	@include size(0px);
-// 	@if $direction == up {
-// 		border-left:$width solid transparent;
-// 		border-right:$width solid transparent;
-// 		border-bottom:$width solid $color;
-// 	} @else if $direction == down {
-// 		border-left:$width solid transparent;
-// 		border-right:$width solid transparent;
-// 		border-top:$width solid $color;
-// 	} @else if $direction == left {
-// 		border-top:$width solid transparent;
-// 		border-bottom:$width solid transparent;
-// 		border-right:$width solid $color;
-// 	} @else {
-// 		border-top:$width solid transparent;
-// 		border-bottom:$width solid transparent;
-// 		border-left:$width solid $color;
-// 	} 
-// }	

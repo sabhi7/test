@@ -1,0 +1,17 @@
+%fl{
+	float:left;
+}
+
+@for $i from 1 through 12 {
+	.col-xs-#{$i}{
+		@extend %fl;
+	}
+}
+
+@mixin colums($size){
+	@for $i from 1 through 12{
+		.col-#{$size}-#{$i}{
+			width:percentage($i/12);
+		}
+	}
+}
